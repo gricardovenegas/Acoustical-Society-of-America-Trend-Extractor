@@ -1,6 +1,6 @@
 # Acoustical-Society-of-America-Trend-Extractor
 
-A python script that extracts the number of search results per year for a given search term, start date, and end date.
+A python script that extracts the number of search results in asa.scitation.org per year for a given search term, start date, and end date.
 The table of values is saved as a CSV file 'out.csv' in the current directory.
 
 To run with the command line, enter the following:
