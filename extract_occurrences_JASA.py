@@ -18,7 +18,7 @@ def get_num_results(search_term, start_date, end_date):
     pageContent = requests.get(url)
     tree = html.fromstring(pageContent.content)
     
-    # extracts the number of search results using the xpath
+    # extract the number of search results using the xpath
     total_hits_xpath = '//*[@id="pb-page-content"]/div/div[2]/div/div/div[2]/div/div/div/div/div[1]/div/div/div/span[3]/text()'
     total_hits_object = tree.xpath(total_hits_xpath)
    
@@ -31,7 +31,7 @@ def get_num_results(search_term, start_date, end_date):
             num_results = '0'
             success = True
         else:
-            num_results = res.split("of ",1)[1][0:-2] # convert string to numbe
+            num_results = res.split("of ",1)[1][0:-2] # extract total number of results from string
             success = True
 
     else:
@@ -50,7 +50,7 @@ def get_range(search_term, start_date, end_date):
 
         num_results, success = get_num_results(search_term, date, date)
         if not(success):
-            print("It seems that you made to many requests to Google Scholar. Please wait a couple of hours and try again.")
+            print("It seems that you made to many requests to ASA. Please wait a couple of hours and try again.")
             break
         year_results = "{0},{1}".format(date, num_results)
         print(year_results)
@@ -63,7 +63,7 @@ if __name__ == "__main__":
 
     if len(sys.argv) < 3:
         print("******")
-        print("Academic word relevance")
+        print("Acoustical Society of America Trend Extractor")
         print("******")
         print("")
         print("Usage: python extract_occurences_JASA.py '<search term>' <start date> <end date>")
