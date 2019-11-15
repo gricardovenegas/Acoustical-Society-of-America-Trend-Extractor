@@ -5,11 +5,11 @@ A python script that extracts the number of search results in asa.scitation.org 
 The table of values is saved as a CSV file 'out.csv' in the current directory.
 
 ## Usage
-To run with the command line, enter the following:
+To run from the command line, enter the following:
 
 python extract_occurences_JASA.py '\<search term>' \<start date> \<end date>
 
-If you want to search for terms in quotations, connect terms with +
+If you want to search for terms in quotations, connect terms with '+'
 
 For example: "climate change" should be entered as climate+change
 
